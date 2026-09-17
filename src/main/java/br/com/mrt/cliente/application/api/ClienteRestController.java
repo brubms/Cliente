@@ -7,9 +7,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @Log4j2
-public class ClienteRestController implements ClienteAPI{
+public abstract class ClienteRestController implements ClienteAPI{
 
     private final ClienteService clienteService;
 
 
+    @Override
+    public ClienteResponse postCadastroNovoCliente(ClienteRequest clienteRquest) {
+        log.info("[Inicial] ClienteRestController - postCadastroNovoCliente");
+        ClienteResponse cliente = clienteService.cadastraNovoCliente(clienteRquest);
+        log.info("[finalizar] ClienteRestController - postCadastroNovoCliente");
+        return cliente;
+    }
 }

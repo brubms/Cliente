@@ -10,5 +10,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @RequestMapping("/cliente")
 public interface ClienteAPI  {
 
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    ClienteResponse postCadastroNovoCliente(@RequestBody @Valid ClienteRequest clienteRequest);
 
 }
