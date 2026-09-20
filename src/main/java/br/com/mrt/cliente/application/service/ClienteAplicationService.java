@@ -15,10 +15,12 @@ public class ClienteAplicationService implements ClienteService {
 
         private final ClienteRepository clienteRepository;
 
+
         @Override
         public ClienteResponse cadastraNovoCliente(ClienteRequest clienteRequest) {
+
                 log.info("[Inicia] ClienteAplicationService - cadastraNovoCliente");
-                Cliente cliente = ClienteRepository.salva(new Cliente(clienteRequest));
+                Cliente cliente = clienteRepository.salva(new Cliente(clienteRequest));
                 log.info("[finaliza] CleinteAplicationService - cadastraNovoCliente");
                 return ClienteResponse.builder().idCliente(cliente.getIdCliente()).build();
         }

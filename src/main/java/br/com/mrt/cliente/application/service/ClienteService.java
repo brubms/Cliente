@@ -4,5 +4,5 @@ import br.com.mrt.cliente.application.api.ClienteRequest;
 import br.com.mrt.cliente.application.api.ClienteResponse;
 
 public interface ClienteService {
-    ClienteResponse cadastraNovoCliente(ClienteRequest clienteRquest);
+    ClienteResponse cadastraNovoCliente(ClienteRequest clienteRequest);
 }
