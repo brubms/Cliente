@@ -12,34 +12,39 @@ import org.hibernate.validator.constraints.br.CPF;
 
 import java.time.LocalDate;
 import java.util.UUID;
+
 //cria a tabela chamada cliente;
 @Entity(name = "cliente")
 @Data
+/*
+ * @NoArgsConstructor -> cria o construtor public Cliente {}
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 public class Cliente {
-	//definindo a chave primaria (PK - PRIMARY KEY)
+	// definindo a chave primaria (PK - PRIMARY KEY)
 	@Id
+	//gera a chave primeiria automaticamente 
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	//cria uma coluna com informações únicas
+	// cria uma coluna com informações únicas
 	@Column(unique = true, nullable = false)
 	private UUID idCliente;
-	//colunas não aceitam ficar vazias
+	// colunas não aceitam ficar vazias
 	@NotNull
 	@NotBlank
-	//tamaanho do nome completo
+	// tamaanho do nome completo
 	@Size(min = 10)
 	private String nomeCompleto;
 	@CPF
 	private String cpf;
-	//colunas não aceitam ficar vazias
+	// colunas não aceitam ficar vazias
 	@NotNull
 	@NotBlank
 	private String email;
-	//tamanho do telefone
-	@Size(min = 11 , max = 13)
+	// tamanho do telefone
+	@Size(min = 11, max = 13)
 	private String telefone;
-	//colunas não aceitam ficar vazias
+	// colunas não aceitam ficar vazias
 	@NotNull
 	private LocalDate dataNascimento;
 	private LocalDate dataHoraCadastro;
@@ -56,6 +61,5 @@ public class Cliente {
 		this.dataHoraCadastro = LocalDate.now();
 
 	}
-
 
 }
