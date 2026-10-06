@@ -5,7 +5,7 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+
 @RequestMapping("/cliente") //define que todas as rotas desse API começam com /v1/cliente
 //contrato da rota
 public interface ClienteAPI {
