@@ -16,5 +16,5 @@ public interface ClienteAPI {
     /*
     *@RequestBody @Valid: Pega o JSON enviado no corpo da requisição e valida os dados de entrada.
     * */
-    ClienteReponse postCadastraNovoCliente(@RequestBody @Valid ClienteRequest clienteRequest);
+    ClienteResponse postCadastraNovoCliente(@RequestBody @Valid ClienteRequest clienteRequest);
 }
