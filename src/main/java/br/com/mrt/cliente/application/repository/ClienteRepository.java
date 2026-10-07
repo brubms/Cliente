@@ -13,5 +13,5 @@ public interface ClienteRepository {
 
     Cliente buscaPorId(UUID idCliente);
 
-    Cliente buscarPorId(UUID idCliente);
+
 }
