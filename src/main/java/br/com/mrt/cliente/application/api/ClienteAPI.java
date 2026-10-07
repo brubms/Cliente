@@ -22,7 +22,7 @@ public interface ClienteAPI {
     ClienteResponse postCadastraNovoCliente(@RequestBody @Valid ClienteRequest clienteRequest);
     //------------------------------------------------------------------------------------------
     //mapeia a rota para o verbo http GET
-    @GetMapping
+    @GetMapping("/{idCliente}")
     //devolve o status 200 ok , caso seja processada com sucesso a listagem
     @ResponseStatus(HttpStatus.OK)
     //No contrato, temos um retorno do tipo List que retorna uma listagem em java
