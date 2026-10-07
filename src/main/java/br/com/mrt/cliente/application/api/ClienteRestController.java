@@ -22,7 +22,7 @@ public class ClienteRestController implements ClienteAPI{
         log.info("[finaliza] ClienteRestController - postCadastraNovoCliente");
         return cliente;
     }
-
+    @Override
     public List<ClienteListResponse> getListaTodosClientes(){
         log.info("[inicia] ClienteRestController - getListaTodosClientes");
         List<ClienteListResponse> listaCliente = clienteService.listaTodosClientes();
