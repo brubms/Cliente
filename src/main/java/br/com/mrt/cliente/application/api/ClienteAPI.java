@@ -19,9 +19,11 @@ public interface ClienteAPI {
     *@RequestBody @Valid: Pega o JSON enviado no corpo da requisição e valida os dados de entrada.
     * */
     ClienteResponse postCadastraNovoCliente(@RequestBody @Valid ClienteRequest clienteRequest);
-
-
+    //------------------------------------------------------------------------------------------
+    //mapeia a rota para o verbo http GET
     @GetMapping
+    //devolve o status 200 ok , caso seja processada com sucesso a listagem
     @ResponseStatus(HttpStatus.OK)
-    List<ClienteListResponse> getListaTodosClientes();
+    //No contrato, temos um retorno do tipo List que retorna uma listagem em java
+    List<ClienteListResponse> getListaTodosClientes();//<- métododo contrato
 }
