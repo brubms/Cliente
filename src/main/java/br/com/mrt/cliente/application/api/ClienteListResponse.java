@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Getter
 @Builder
@@ -26,6 +27,8 @@ public class ClienteListResponse {
     }
 
     public static List<ClienteListResponse> converte(List<Cliente> clientes){
-        return null;
+        return clientes.stream()
+                .map(ClienteListResponse::new)
+                .collect(Collectors.toList());
     }
 }
