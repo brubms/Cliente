@@ -5,6 +5,8 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RequestMapping("/cliente") //define que todas as rotas desse API começam com /v1/cliente
 //contrato da rota
@@ -17,4 +19,9 @@ public interface ClienteAPI {
     *@RequestBody @Valid: Pega o JSON enviado no corpo da requisição e valida os dados de entrada.
     * */
     ClienteResponse postCadastraNovoCliente(@RequestBody @Valid ClienteRequest clienteRequest);
+
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    List<ClienteListResponse> getListaTodosClientes();
 }
