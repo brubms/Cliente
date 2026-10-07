@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 @Log4j2
@@ -19,5 +21,12 @@ public class ClienteRestController implements ClienteAPI{
         ClienteResponse cliente = clienteService.cadastraNovoCliente(clienteRequest);
         log.info("[finaliza] ClienteRestController - postCadastraNovoCliente");
         return cliente;
+    }
+    @Override
+    public List<ClienteListResponse> getListaTodosClientes(){
+        log.info("[inicia] ClienteRestController - getListaTodosClientes");
+        List<ClienteListResponse> listaCliente = clienteService.listaTodosClientes();
+        log.info("[finaliza] ClienteRestController - getListaTodosClientes");
+        return listaCliente;
     }
 }
