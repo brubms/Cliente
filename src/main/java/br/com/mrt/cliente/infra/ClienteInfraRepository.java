@@ -33,10 +33,14 @@ public class ClienteInfraRepository implements ClienteRepository {
         return clientes;
     }
 
-    public Cliente buscarPorId(UUID idCliente){
+    @Override
+    public Cliente buscaPorId(UUID idCliente) {
         log.info("[inicia] ClienteInfraRepository - buscarPorId");
-
+        Cliente cliente = jpaRepository.findById(idCliente).orElseThrow();
         log.info("[finaliza] ClienteInfraRepository - buscarPorId");
-        return null;
+        return cliente;
     }
+
+
+
 }
