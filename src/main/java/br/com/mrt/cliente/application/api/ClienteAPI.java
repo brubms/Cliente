@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 
 @RequestMapping("/cliente") //define que todas as rotas desse API começam com /v1/cliente
@@ -26,4 +27,8 @@ public interface ClienteAPI {
     @ResponseStatus(HttpStatus.OK)
     //No contrato, temos um retorno do tipo List que retorna uma listagem em java
     List<ClienteListResponse> getListaTodosClientes();//<- métododo contrato
+    //-----------------------------------------------------------------------------------------
+    @GetMapping("/{idCliente}")
+    @ResponseStatus(HttpStatus.OK)
+    ClienteDetalhadoResponse getBuscaClientePorId(@PathVariable UUID idCliente);
 }

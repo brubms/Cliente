@@ -1,5 +1,6 @@
 package br.com.mrt.cliente.application.service;
 
+import br.com.mrt.cliente.application.api.ClienteDetalhadoResponse;
 import br.com.mrt.cliente.application.api.ClienteListResponse;
 import br.com.mrt.cliente.application.api.ClienteRequest;
 import br.com.mrt.cliente.application.api.ClienteResponse;
@@ -10,6 +11,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -40,5 +42,12 @@ public class ClienteApplicationService implements ClienteService{
         *
         *
         * */
+    }
+    @Override
+    public ClienteDetalhadoResponse buscaClientePorId(UUID idCliente){
+        log.info("[inicia] ClienteApplicationService - buscaClientePorId ");
+        Cliente cliente = clienteRepository.buscaPorId(idCliente);
+        log.info("[finaliza] ClienteApplicationService - buscaClientePorId ");
+        return new ClienteDetalhadoResponse(cliente);
     }
 }
