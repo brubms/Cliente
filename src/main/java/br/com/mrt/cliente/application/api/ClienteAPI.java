@@ -31,4 +31,8 @@ public interface ClienteAPI {
     @GetMapping("/{idCliente}")
     @ResponseStatus(HttpStatus.OK)
     ClienteDetalhadoResponse getBuscaClientePorId(@PathVariable UUID idCliente);
+
+    @PatchMapping("/{idCliente}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    void patchAlteraDadosCliente(@PathVariable UUID idCliente, @RequestBody @Valid ClienteAlteradoRequest clienteAlteradoRequest);
 }
