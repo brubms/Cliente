@@ -38,4 +38,11 @@ public class ClienteRestController implements ClienteAPI{
         log.info("[finaliza] ClienteRestController - getBuscaClientePorId");
         return detalhado;
     }
+
+    @Override
+    public void deleteClientePorId(UUID idCliente){
+        log.info("[inicia] ClienteRestController - deleteClientePorId");
+
+        log.info("[finaliza] ClienteRestController - deleteClientePorId");
+    }
 }
