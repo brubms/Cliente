@@ -34,6 +34,6 @@ public interface ClienteAPI {
     //-----------------------------------------------------------------------------------------
     @DeleteMapping("/{idCliente}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void deleteClientePorId(@PathVariable UUID iDCliente);
+    void deleteClientePorId(@PathVariable UUID idCliente);
 
 }
