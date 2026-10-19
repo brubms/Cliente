@@ -41,6 +41,13 @@ public class ClienteInfraRepository implements ClienteRepository {
         return cliente;
     }
 
+    @Override
+    public void deletaPorId(UUID idCliente) {
+        log.info("[inicia] ClienteInfraRepository - deletaPorId ");
+        jpaRepository.deleteById(idCliente);
+        log.info("[finaliza] ClienteInfraRepository - deletaPorId ");
+
+    }
 
 
 }
