@@ -1,9 +1,6 @@
 package br.com.mrt.cliente.application.service;
 
-import br.com.mrt.cliente.application.api.ClienteDetalhadoResponse;
-import br.com.mrt.cliente.application.api.ClienteListResponse;
-import br.com.mrt.cliente.application.api.ClienteRequest;
-import br.com.mrt.cliente.application.api.ClienteResponse;
+import br.com.mrt.cliente.application.api.*;
 import br.com.mrt.cliente.application.repository.ClienteRepository;
 import br.com.mrt.cliente.domain.Cliente;
 import lombok.RequiredArgsConstructor;
@@ -57,6 +54,16 @@ public class ClienteApplicationService implements ClienteService{
         clienteRepository.buscaPorId(idCliente);
         clienteRepository.deletaPorId(idCliente);
         log.info("[finaliza] ClienteApplicationService - deletaClientePorId");
+
+    }
+
+    @Override
+    public void alteraDadosCliente(UUID idCliente, ClienteAlteradoRequest clienteAlteradoRequest) {
+        log.info("[inicia] ClienteApplicationService - alteraDadosCliente");
+        Cliente cliente = clienteRepository.buscaPorId(idCliente);
+        cliente.alteraCliente(clienteAlteradoRequest);
+        clienteRepository.salva(cliente);
+        log.info("[finaliza] ClienteApplicationService - alteraDadosCliente");
 
     }
 }

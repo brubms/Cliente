@@ -1,9 +1,6 @@
 package br.com.mrt.cliente.application.service;
 
-import br.com.mrt.cliente.application.api.ClienteDetalhadoResponse;
-import br.com.mrt.cliente.application.api.ClienteListResponse;
-import br.com.mrt.cliente.application.api.ClienteRequest;
-import br.com.mrt.cliente.application.api.ClienteResponse;
+import br.com.mrt.cliente.application.api.*;
 
 import java.util.List;
 import java.util.UUID;
@@ -16,4 +13,6 @@ public interface ClienteService {
     ClienteDetalhadoResponse buscaClientePorId(UUID idCliente);
 
     void deletaClientePorId(UUID idCliente);
+
+    void alteraDadosCliente(UUID idCliente, ClienteAlteradoRequest clienteAlteradoRequest);
 }
